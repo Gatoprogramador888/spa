@@ -2,7 +2,7 @@
 Domain para Appointment (Cita).
 Lógica de negocio relacionada con citas.
 """
-from dto.appointment_dto import AppointmentCreateDTO, AppointmentReadDTO
+from dto.appointment_dto import AppointmentCreateDTO, AppointmentReadDTO, AppointmentDTO
 from utils.datetime_utils import is_future_date, Datetime_to_Date_and_Date
 from utils.phone_utils import is_valid_phone_number
 from repositories.appointment_repository import AppointmentRepository
@@ -12,7 +12,7 @@ from datetime import datetime
 #Validar si existe dicha cita y servicio pero en service_domain.py
 
 def schedule_appointment(appointment_data : AppointmentCreateDTO,
-                          appointmenReposity : AppointmentRepository) -> bool:
+                          appointmenReposity :AppointmentRepository) -> bool:
     """
     Lógica para programar una nueva cita.
     """
@@ -29,19 +29,28 @@ def schedule_appointment(appointment_data : AppointmentCreateDTO,
     return False
 
 def get_appointment_by_number(number : str,
-                                       appointmenReposity : AppointmentRepository) -> list[AppointmentReadDTO]:
+                                       appointmenReposity : AppointmentRepository) -> list[AppointmentDTO]:
     """
     Lógica para obtener una cita por número de teléfono.
     """
     appointments = appointmenReposity.get_appointment_by_number(number)
-    return appointments
+
+    appointmenReturn = []
+
+    for appointment in appointments:
+        appointmenReturn.append(appointment.to_BaseDTO())
+
+    return appointmenReturn
 
 
 def get_appointment_by_date(date : datetime,
-                                       appointmenReposity : AppointmentRepository) -> list[AppointmentReadDTO]:
+                                       appointmenReposity : AppointmentRepository) -> list[AppointmentDTO]:
     """
     Lógica para obtener una cita por fecha .
     """
     dateStart, dateEnd = Datetime_to_Date_and_Date(date)
     appointments = appointmenReposity.get_appointment_by_date(dateStart, dateEnd)
-    return appointments
+    appointmentsReturn = []
+    for appointment in appointments:
+        appointmentsReturn.append(appointment.to_BaseDTO())
+    return appointmentsReturn
