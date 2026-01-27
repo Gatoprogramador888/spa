@@ -1,5 +1,4 @@
-from datetime import timezone
-from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, func
 from config.database import Base
 
 
@@ -11,4 +10,4 @@ class Service(Base):
     name = Column(String(100), nullable=False)
     cost_cents = Column(Integer, nullable=False)
     active = Column(Boolean, default=True)
-    created_at = Column(DateTime, default=timezone.utc)
+    created_at = Column(DateTime, server_default=func.now())

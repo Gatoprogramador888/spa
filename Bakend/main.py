@@ -2,9 +2,10 @@
 FastAPI application entry point.
 Main application configuration and router registration.
 """
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from config import config
+from setting import config
 
 # Importar routers
 from api.health import router as health_router
@@ -15,17 +16,18 @@ from api.login import router as login_router
 from api.services import router as services_router
 from api.chat_ws import router as chat_ws_router
 
+app = FastAPI(
+        title="SPA API",
+        description="API para gestión de citas, pagos y chat",
+        version="1.0.0"
+    )
 
 def create_app():
     """
     Factory pattern para crear la aplicación FastAPI.
     Carga configuración desde variables de entorno.
     """
-    app = FastAPI(
-        title="SPA API",
-        description="API para gestión de citas, pagos y chat",
-        version="1.0.0"
-    )
+
 
     # Configuración CORS
     app.add_middleware(
@@ -57,6 +59,21 @@ def create_app():
 
     return app
 
+# Exception handler para ValueError (errores de negocio)
+@app.exception_handler(ValueError)
+async def value_error_handler(request: Request, exc: ValueError):
+    return JSONResponse(
+        status_code=400,
+        content={"detail": str(exc)}
+    )
+
+# Exception handler genérico
+@app.exception_handler(Exception)
+async def general_exception_handler(request: Request, exc: Exception):
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Error interno del servidor"}
+    )
 
 if __name__ == '__main__':
     import uvicorn

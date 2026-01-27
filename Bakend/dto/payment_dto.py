@@ -2,9 +2,31 @@
 DTO para Payment (Pago).
 Valida y normaliza datos de entrada para pagos.
 """
+from dto.Interface import BaseDTO, ConvertDTO
+
+class PaymentDTO(BaseDTO):
+    """
+    Data Transfer Object para pago.
+    """
+
+    def __init__(
+        self,
+        id: int,
+        appointment_id: int,
+        amount_cents: int,
+        status: str,
+        provider_payment_id: str = None,
+        created_at: str = None,
+    ):
+        self.id = id
+        self.appointment_id = appointment_id
+        self.amount_cents = amount_cents
+        self.status = status
+        self.provider_payment_id = provider_payment_id
+        self.created_at = created_at
 
 
-class PaymentDTO:
+class PaymentCreateDTO(ConvertDTO):
     """
     Data Transfer Object para pago.
     
@@ -23,13 +45,11 @@ class PaymentDTO:
         appointment_id: int,
         amount_cents: int,
         status: str = "PENDING",
-        provider: str = None,
         provider_payment_id: str = None,
     ):
         self.appointment_id = self._validate_appointment_id(appointment_id)
         self.amount_cents = self._validate_amount_cents(amount_cents)
         self.status = self._validate_status(status)
-        self.provider = provider.strip() if isinstance(provider, str) else provider
         self.provider_payment_id = (
             provider_payment_id.strip()
             if isinstance(provider_payment_id, str)
@@ -56,3 +76,50 @@ class PaymentDTO:
             valid = ", ".join(self.VALID_STATUSES)
             raise ValueError(f"El estado debe ser uno de: {valid}")
         return status
+    
+    def to_BaseDTO(self) -> PaymentDTO:
+        """
+        Convierte el DTO de creación a un DTO base.
+        """
+        return PaymentDTO(
+            id=None,
+            appointment_id=self.appointment_id,
+            amount_cents=self.amount_cents,
+            status=self.status,
+            provider_payment_id=self.provider_payment_id,
+            created_at=None,
+        )
+    
+class PaymentReadDTO(ConvertDTO):
+    """
+    Data Transfer Object para leer pago.
+    """
+
+    def __init__(
+        self,
+        id: int,
+        appointment_id: int,
+        amount_cents: int,
+        status: str,
+        provider_payment_id: str = None,
+        created_at: str = None,
+    ):
+        self.id = id
+        self.appointment_id = appointment_id
+        self.amount_cents = amount_cents
+        self.status = status
+        self.provider_payment_id = provider_payment_id
+        self.created_at = created_at
+
+    def to_BaseDTO(self) -> PaymentDTO:
+        """
+        Convierte el DTO de lectura a un DTO base.
+        """
+        return PaymentDTO(
+            id=self.id,
+            appointment_id=self.appointment_id,
+            amount_cents=self.amount_cents,
+            status=self.status,
+            provider_payment_id=self.provider_payment_id,
+            created_at=self.created_at,
+        )

@@ -1,9 +1,11 @@
 from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 class BaseDTO(BaseModel):
-    class Config:
-        orm_mode = True
-        anystr_strip_whitespace = True
+    model_config = ConfigDict(
+        from_attributes=True,
+        str_strip_whitespace=True
+    )
 
 class ConvertDTO:
     def to_BaseDTO(self) -> BaseDTO:

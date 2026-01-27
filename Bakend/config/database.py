@@ -6,7 +6,7 @@ import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
-from typing import Generator
+from contextlib import contextmanager
 
 # Cargar variables de entorno
 load_dotenv()
@@ -17,6 +17,8 @@ Base = declarative_base()
 # URL de base de datos desde variable de entorno .env
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./app.db")
 
+print(f"Using database URL: {DATABASE_URL}")
+
 engine = create_engine(
     DATABASE_URL,
     connect_args={"check_same_thread": False} if "sqlite" in DATABASE_URL else {}
@@ -24,8 +26,8 @@ engine = create_engine(
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-
-def get_db() -> Generator[Session, None, None]:
+@contextmanager
+def get_db():
     """
     Dependency para obtener sesión de base de datos.
     TODO: Implementar inyección de dependencias real
