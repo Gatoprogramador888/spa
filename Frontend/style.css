@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(153, 130, 0);
+}
+header {
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    background: lightpink;
+    width: 100%;
+}
+.Terapias-Tradicionales {
+    border: 2px solid black; /* Borde sólido y color */
+    background-color: white; /* Color de fondo */
+    padding: 10px;
+    border-radius: 10px; /* Esquinas redondeadas (opcional) [14] */
+    margin: 10px; /* Margen externo para separar de otros elementos [14] */
+    max-width: 300px; 
+    text-align: center;
+}
