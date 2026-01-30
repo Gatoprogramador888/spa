@@ -78,7 +78,7 @@ header {
     flex-wrap: wrap;
 }
 
-.Masaje-Relajante,.Masaje-Drenaje-Linfatico,.Masaje-Deportivo {
+.Masaje-Relajante,.Masaje-Drenaje-Linfatico,.Masaje-Deportivo,.Masaje-Descontracturante,.Masaje-Prenatal,.Veloterapia,.Masaje-Piedras,.Tratamiento-Exfoliante,.reafirmante{
     border: 2px solid black; 
     background-color: rgba(218, 165, 32, .9); 
     padding: 10px;
@@ -86,53 +86,9 @@ header {
     margin: 10px;
     max-width: 300px; 
     color: black;
-}
-
-
-
-.Masaje-Descontracturante {
-    border: 2px solid black; 
-    background-color: rgba(218, 165, 32, .9); 
-    padding: 10px;
-    border-radius: 10px; 
-    margin: 10px;
-    max-width: 300px;
-}
-
-.Masaje-Prenatal {
-    border: 2px solid black; 
-    background-color: rgba(218, 165, 32, .9);  
-    padding: 10px;
-    border-radius: 10px; 
-    margin: 10px;
-    max-width: 300px
-}
-
-.Veloterapia {
-    border: 2px solid black; 
-    background-color: rgba(218, 165, 32, .9); ; 
-    padding: 10px;
-    border-radius: 10px; 
-    margin: 10px;
-    max-width: 300px
-}
-
-.Masaje-Piedras {
-    border: 2px solid black; 
-    background-color: rgba(218, 165, 32, .9);  
-    padding: 10px;
-    border-radius: 10px; 
-    margin: 10px;
-    max-width: 300px
-}
-
-.Tratamiento-Exfoliante {
-    border: 2px solid black; 
-    background-color: rgba(218, 165, 32, .9); ; 
-    padding: 10px;
-    border-radius: 10px; 
-    margin: 10px;
-    max-width: 300px
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .tratamientos-faciales {
@@ -144,11 +100,11 @@ header {
     color: rgb(240, 194, 79);
 }
 
-.reafirmante {
-    border: 2px solid black; 
-    background-color: rgba(218, 165, 32, .9);  
-    padding: 10px;
-    border-radius: 10px; 
-    margin: 10px;
-    max-width: 300px
+
+.terapias-button{
+    background-color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    width: 100%; 
+    border-radius: 8px;
+    margin-top: auto;
 }
