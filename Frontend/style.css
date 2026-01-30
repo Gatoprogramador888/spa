@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
-   /* background-image: url(img/fondo.jpg.png);*/
+    /*background-image: url(img/fondo.jpg.png);*/
     background-attachment: fixed;
     background-position: center;
 }
@@ -28,11 +28,12 @@ header {
 
 .Masaje-Relajante,.Masaje-Drenaje-Linfatico,.Masaje-Deportivo {
     border: 2px solid goldenrod; 
-    background-color: rgba(218, 165, 32, .7); 
+    background-color: rgba(218, 165, 32, 1); 
     padding: 10px;
     border-radius: 10px; 
     margin: 10px;
     max-width: 300px; 
+    color: white;
 }
 
 
@@ -43,7 +44,7 @@ header {
     padding: 10px;
     border-radius: 10px; 
     margin: 10px;
-    max-width: 300px
+    max-width: 300px;
 }
 
 .Masaje-Prenatal {
