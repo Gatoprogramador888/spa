@@ -4,19 +4,19 @@ Lógica de negocio relacionada con pagos.
 """
 pass
 
-from dto.payment_dto import PaymentCreateDTO, PaymentReadDTO, PaymentDTO
-from repositories.payment_repository import PaymentRepository
-from models.payment import Payment
+from dto.payment_dto import PaymentCreateDTO, PaymentReadDTO, PaymentDTO  
+from repositories.payment_repository import PaymentRepository  
+from models.payment import Payment  
 from datetime import datetime
-from dto.appointment_dto import AppointmentCreateDTO, AppointmentDTO
-from dto.service_dto import ServiceDTO
+from dto.appointment_dto import AppointmentCreateDTO, AppointmentDTO  
+from dto.service_dto import ServiceDTO  
 
 class IDiscountPayment():
     _discunt_rate : float
     def __init__(self, discount_rate : float):
         self._discunt_rate = discount_rate
 
-    def cost_discounted(self, amount_cents : int) -> int:
+    def cost_discounted(self, amount_cents : int) -> int:  
         pass
     
     def apply_discount(self, amount_cents : int) -> int:
@@ -28,7 +28,7 @@ class IAdvancePayment():
     def __init__(self, advance_rate : float):
         self._advance_rate = advance_rate
 
-    def cost_advance(self, amount_cents : int) -> int:
+    def cost_advance(self, amount_cents : int) -> int: 
         pass
 
     def apply_advance(self, amount_cents : int) -> int:
