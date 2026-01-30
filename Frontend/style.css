@@ -1,19 +1,97 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(153, 130, 0);
+    background-color: black;
+   /* background-image: url(img/fondo.jpg.png);*/
+    background-attachment: fixed;
+    background-position: center;
 }
+
 header {
     text-align: center;
-    font-family:'Courier New', Courier, monospace;
+    font-family: fantasy;
+    font-size: larger;
     background: lightpink;
     width: 100%;
 }
-.Terapias-Tradicionales {
-    border: 2px solid black; /* Borde sólido y color */
-    background-color: white; /* Color de fondo */
-    padding: 10px;
-    border-radius: 10px; /* Esquinas redondeadas (opcional) [14] */
-    margin: 10px; /* Margen externo para separar de otros elementos [14] */
-    max-width: 300px; 
+
+.Terapias-Tradicionales{
+    color: white;
     text-align: center;
+}
+
+.contenedor-masajes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.Masaje-Relajante,.Masaje-Drenaje-Linfatico,.Masaje-Deportivo {
+    border: 2px solid goldenrod; 
+    background-color: rgba(218, 165, 32, .7); 
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px;
+    max-width: 300px; 
+}
+
+
+
+.Masaje-Descontracturante {
+    border: 2px solid black; 
+    background-color: rgba(218, 165, 32, .5); 
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px;
+    max-width: 300px
+}
+
+.Masaje-Prenatal {
+    border: 2px solid black; 
+   background-color: rgba(218, 165, 32, .5);  
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px;
+    max-width: 300px
+}
+
+.Veloterapia {
+    border: 2px solid black; 
+    background-color: rgba(218, 165, 32, .5); ; 
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px;
+    max-width: 300px
+}
+
+.Masaje-Piedras {
+    border: 2px solid black; 
+   background-color: rgba(218, 165, 32, .5);  
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px;
+    max-width: 300px
+}
+
+.Tratamiento-Exfoliante {
+    border: 2px solid black; 
+   background-color: rgba(218, 165, 32, .5); ; 
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px;
+    max-width: 300px
+}
+
+.tratamientos-faciales {
+    text-align: center;
+    color: white;
+}
+
+.reafirmante {
+    border: 2px solid black; 
+    background-color: rgba(218, 165, 32, .5);  
+    padding: 10px;
+    border-radius: 10px; 
+    margin: 10px;
+    max-width: 300px
 }
