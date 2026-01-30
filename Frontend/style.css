@@ -1,22 +1,74 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
-    /*background-image: url(img/fondo.jpg.png);*/
+    background-image: url(img/fondo2.jpg.png);
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
 }
 
 header {
     text-align: center;
-    font-family: fantasy;
-    font-size: larger;
-    background: lightpink;
+    font-family:'Segoe UI', sans-serif;
+    font-size: 40px;
+    background: rgba(255, 212, 218, 0.2);
     width: 100%;
+    height: 500px;
+    line-height: 500px;
+    color: rgb(240, 194, 79);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.enlaces {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 50px 50px;
+}
+
+.enlace-spa {
+    text-decoration: none;    
+    color: rgb(240, 194, 79);          
+    font-family: 'Segoe UI', sans-serif; 
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.enlace-spa:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.descripcion {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    text-align: center;
+    padding: 20px;
+    background-color:  rgba(255, 212, 218, 0.2);
+    width: 40%;
+    margin-top: 60px;
+    color: white;
+    height: 100px;
+    font-size: 20px;
+}
+.descripcion p {
+    margin: 0;
 }
 
 .Terapias-Tradicionales{
-    color: white;
     text-align: center;
+    font-size: 25px;
+    font-family:'Segoe UI', sans-serif;
+    background: rgba(255, 212, 218, 0.2);
+    width: 100%;
+    color: rgb(240, 194, 79);
 }
 
 .contenedor-masajes {
@@ -27,20 +79,20 @@ header {
 }
 
 .Masaje-Relajante,.Masaje-Drenaje-Linfatico,.Masaje-Deportivo {
-    border: 2px solid goldenrod; 
-    background-color: rgba(218, 165, 32, 1); 
+    border: 2px solid black; 
+    background-color: rgba(218, 165, 32, .9); 
     padding: 10px;
     border-radius: 10px; 
     margin: 10px;
     max-width: 300px; 
-    color: white;
+    color: black;
 }
 
 
 
 .Masaje-Descontracturante {
     border: 2px solid black; 
-    background-color: rgba(218, 165, 32, .5); 
+    background-color: rgba(218, 165, 32, .9); 
     padding: 10px;
     border-radius: 10px; 
     margin: 10px;
@@ -49,7 +101,7 @@ header {
 
 .Masaje-Prenatal {
     border: 2px solid black; 
-   background-color: rgba(218, 165, 32, .5);  
+    background-color: rgba(218, 165, 32, .9);  
     padding: 10px;
     border-radius: 10px; 
     margin: 10px;
@@ -58,7 +110,7 @@ header {
 
 .Veloterapia {
     border: 2px solid black; 
-    background-color: rgba(218, 165, 32, .5); ; 
+    background-color: rgba(218, 165, 32, .9); ; 
     padding: 10px;
     border-radius: 10px; 
     margin: 10px;
@@ -67,7 +119,7 @@ header {
 
 .Masaje-Piedras {
     border: 2px solid black; 
-   background-color: rgba(218, 165, 32, .5);  
+    background-color: rgba(218, 165, 32, .9);  
     padding: 10px;
     border-radius: 10px; 
     margin: 10px;
@@ -76,7 +128,7 @@ header {
 
 .Tratamiento-Exfoliante {
     border: 2px solid black; 
-   background-color: rgba(218, 165, 32, .5); ; 
+    background-color: rgba(218, 165, 32, .9); ; 
     padding: 10px;
     border-radius: 10px; 
     margin: 10px;
@@ -85,12 +137,16 @@ header {
 
 .tratamientos-faciales {
     text-align: center;
-    color: white;
+    font-size: 25px;
+    font-family:'Segoe UI', sans-serif;
+    background: rgba(255, 212, 218, 0.2);
+    width: 100%;
+    color: rgb(240, 194, 79);
 }
 
 .reafirmante {
     border: 2px solid black; 
-    background-color: rgba(218, 165, 32, .5);  
+    background-color: rgba(218, 165, 32, .9);  
     padding: 10px;
     border-radius: 10px; 
     margin: 10px;
