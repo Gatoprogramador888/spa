@@ -101,12 +101,96 @@ header:hover {
     justify-content: space-between;
 }
 
+.Masaje-Relajante {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease;
+}
+
+.Masaje-Relajante:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Masaje-Drenaje-Linfatico {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease;
+}
+
+.Masaje-Drenaje-Linfatico:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Masaje-Deportivo {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease;
+}
+
+.Masaje-Deportivo:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Masaje-Descontracturante {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease; 
+}
+
+.Masaje-Descontracturante:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Masaje-Prenatal {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease;
+}
+
+.Masaje-Prenatal:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.Veloterapia {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px;
+    transition: 0.4s ease;
+}
+
+.Veloterapia:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
 .Masaje-Piedras {
-background-color: rgba(218, 165, 32, .9) ;
-border-radius: 15px;
-overflow: hidden;
-border: 1px;
-transition: 0.4s ease;
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease;
 }
 
 .Masaje-Piedras:hover {
