@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
-    background-image: url(img/fondo2.jpg.png);
+    background-image: url(img/fondo3.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -11,7 +11,7 @@ header {
     text-align: center;
     font-family:'Segoe UI', sans-serif;
     font-size: 40px;
-    background: rgba(255, 212, 218, 0.2);
+    background: rgba(255, 212, 218, 0.5);
     width: 100%;
     height: 500px;
     line-height: 500px;
@@ -20,6 +20,16 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
+overflow: hidden;
+border: 1px;
+transition: 0.4s ease;
+}
+
+header:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 10px 10px 100px rgba(126, 112, 31, 0.492);
 }
 
 .enlaces {
@@ -66,7 +76,7 @@ header {
     text-align: center;
     font-size: 25px;
     font-family:'Segoe UI', sans-serif;
-    background: rgba(255, 212, 218, 0.2);
+    background: rgba(255, 212, 218, 0.5);
     width: 100%;
     color: rgb(240, 194, 79);
 }
@@ -91,6 +101,20 @@ header {
     justify-content: space-between;
 }
 
+.Masaje-Piedras {
+background-color: rgba(218, 165, 32, .9) ;
+border-radius: 15px;
+overflow: hidden;
+border: 1px;
+transition: 0.4s ease;
+}
+
+.Masaje-Piedras:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
 .tratamientos-faciales {
     text-align: center;
     font-size: 25px;
@@ -107,4 +131,17 @@ header {
     width: 100%; 
     border-radius: 8px;
     margin-top: auto;
+}
+
+.depilaciones-cera {
+    text-align: center;
+    font-size: 25px;
+    font-family:'Segoe UI', sans-serif;
+    background: rgba(255, 212, 218, 0.5);
+    width: 100%;
+    color: rgb(240, 194, 79); 
+}
+
+.piernas {
+
 }
