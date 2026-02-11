@@ -66,10 +66,10 @@ header:hover {
     text-align: center;
     padding: 20px;
     background-color:  rgba(255, 212, 218, 0.2);
-    width: 40%;
+    width: auto;
     margin-top: 60px;
     color: white;
-    height: 100px;
+    height: auto;
     font-size: 20px;
 }
 .descripcion p {
@@ -290,6 +290,174 @@ header:hover {
     justify-content: space-between;
 }
 
+.piernas {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.piernas:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.medias {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.medias:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.brazos {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.brazos:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.pecho {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.pecho:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.espalda {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.espalda:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.abdomen {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.abdomen:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.axilas {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.axilas:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.bikini {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.bikini:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.plus {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.plus:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.gluteos {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.gluteos:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.linea {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.linea:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
+.cejas {
+    background-color: rgba(218, 165, 32, .9) ;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px;
+    transition: 0.4s ease
+}
+
+.cejas:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado);
+    box-shadow: 0 10px 20px gold;
+}
+
 /* Definición del movimiento: aparecer y subir suavemente */
 @keyframes entradaSuave {
   0% { 
@@ -338,7 +506,14 @@ header:hover {
     text-align: center;
     flex: 1;
     justify-content: center;
-    
+    text-align: center;
+    padding: 20px;
+    background-color:  rgba(255, 212, 218, 0.2);
+    width: auto;
+    margin-top: 60px;
+    color: white;
+    height: auto;
+    font-size: 20px;
 }
 
 .mapa, .horario {
