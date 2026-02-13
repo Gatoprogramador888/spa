@@ -58,6 +58,21 @@ header:hover {
     cursor: pointer;
 }
 
+.button-spa {
+     text-decoration: none;    
+    color: rgb(240, 194, 79);          
+    font-family: 'Segoe UI', sans-serif; 
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.button-spa:hover {
+    color: rgb(173, 140, 57);  
+    cursor: pointer;
+}
+
 .descripcion {
     display: block;
     margin-left: auto;
