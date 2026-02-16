@@ -12,6 +12,34 @@ body html {
     margin: 0;
 }
 
+/* --- Ajuste para Celulares --- */
+@media (max-width: 768px) {
+  /* 1. Hace que cualquier contenedor con ancho fijo se adapte al 100% */
+  div, section, article, header, footer, .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    display: block !important; /* Apila elementos que estaban uno al lado del otro */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box;
+  }
+
+  /* 2. Ajusta imágenes y mapas (iframes) para que no se salgan de la pantalla */
+  img, iframe, video {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* 3. Evita que el texto sea demasiado grande o pequeño */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
 header {
     text-align: center;
     font-family:'Segoe UI', sans-serif;
