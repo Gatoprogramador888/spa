@@ -6,14 +6,14 @@
     <title>Servicios</title>
     <link rel="stylesheet" href="style.css" />
 </head>
-<body class="animacion-inicio">
+<body>
+    <section  class="animacion-inicio">
     <div class="enlaces">
     <a href="index.html" class="enlace-spa">Inicio</a>
     <a href="depilaciones.html" class="enlace-spa">Depilaciones</a>
     <a href="https://wa.me/523351093950" target="_blank" class="enlace-spa">Contacto</a>
     <a href="https://www.facebook.com/share/1C4Mi8j1Lx/" class="enlace-spa">Facebook</a>
       <a href="https://www.instagram.com/invites/contact/?igsh=1wm7rh8885his&utm_content=w16fyq4" class="enlace-spa">Instagram</a>
-    <a href="" class="enlace-spa">carrito</a>
     </div>
 
     <div class="Terapias-Tradicionales"><h2><strong>Terapias Tradicionales</strong></h2></div>
@@ -172,5 +172,28 @@
         <a href="agendar.html" class="button-spa">Agendar cita</a>
     </button>
     </div>
+    </section>
+
+     <div id="spa-chatbot-wrapper">
+    <div id="bubble-control" onclick="toggleChatWindow()">
+        <span id="bubble-icon">🌿</span>
+    </div>
+
+    <div id="chat-frame" style="display: none;">
+        <div id="chat-header-spa">
+            <span> Asistente </span>
+            <button onclick="toggleChatWindow()">✕</button>
+        </div>
+        <div id="chat-content">
+            <div class="msg-bot">¡Bienvenida/o! Relájate... ¿En qué podemos ayudarte hoy?</div>
+        </div>
+        <div id="chat-actions">
+            <button onclick="botReply('Servicios')">Servicios</button>
+            <button onclick="botReply('Dudas y aclaraciones')">Dudas y aclaraciones</button>
+            <button onclick="botReply('Redes Sociales')">Redes sociales</button>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
