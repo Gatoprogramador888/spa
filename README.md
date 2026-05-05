@@ -1,130 +1,37 @@
-Plataforma Web para Gestión de Citas de Spa
-🎓 Contexto académico
+---
 
-Este proyecto forma parte de un proyecto universitario, cuyo objetivo es aplicar conceptos de:
+# La Volta Vida - SPA VIP 🌿
 
-análisis de negocio
+[cite_start]Sistema de gestión y automatización de servicios para el spa **La Volta Vida**, ubicado en Guadalajara, Jalisco[cite: 1, 2]. [cite_start]Este proyecto surge de la necesidad de modernizar la atención al cliente y optimizar la administración interna del negocio[cite: 5, 6].
 
-diseño de software
+## 📋 Descripción del Proyecto
+[cite_start]El objetivo principal es el desarrollo de una plataforma web que permita a los clientes visualizar los servicios de masaje disponibles, agendar citas de forma autónoma y realizar el pago de anticipos de manera segura[cite: 1].
 
-arquitectura backend
+### Problema a resolver:
+* [cite_start]Dependencia de reservas manuales vía WhatsApp o llamadas telefónicas, lo que consume tiempo operativo[cite: 31].
+* [cite_start]Dificultad para que nuevos clientes conozcan el catálogo detallado de servicios y costos[cite: 32].
+* [cite_start]Riesgo de inasistencias que generan pérdidas económicas al no contar con un sistema de anticipos formal[cite: 13, 14].
 
-integración con servicios externos
+## 🚀 Funcionalidades Principales
+* [cite_start]**Visualización de Catálogo:** Galería de servicios con descripción, duración y costos[cite: 16, 26].
+* [cite_start]**Gestión de Citas:** Sistema interactivo para consultar disponibilidad y agendar horarios[cite: 15].
+* [cite_start]**Pasarela de Pagos:** Automatización de anticipos (50% del costo total) para confirmar la cita, integrado inicialmente con Mercado Pago[cite: 13, 92, 94].
+* [cite_start]**Notificaciones Automáticas:** Confirmación de citas tanto para el administrador como para el cliente[cite: 21].
+* [cite_start]**Panel Administrativo:** Herramientas para que el personal gestione la agenda diaria y actualice servicios[cite: 25, 27].
 
-El sistema se desarrolla con un enfoque realista, simulando una solución aplicable a un negocio pequeño.
+## 🛠️ Tecnologías Utilizadas
+[cite_start]El proyecto se desarrolla bajo el concepto de **Single-Page Application (SPA)** para garantizar una navegación fluida y rápida[cite: 37, 40].
 
-🧠 Descripción del proyecto
+* [cite_start]**Frontend:** HTML5, CSS3 y JavaScript[cite: 38].
+* **Backend (En transición):** * Versión inicial desarrollada en **Python**.
+    * Actualmente en proceso de migración a **C#** para mejorar la robustez y escalabilidad del sistema.
 
-La plataforma es una aplicación web orientada al cliente que permite:
+## 📈 Metodología de Desarrollo
+[cite_start]Se utiliza la metodología ágil **Scrum**, trabajando en ciclos iterativos (sprints) para permitir una entrega continua de valor y adaptabilidad ante cambios[cite: 10, 11]. [cite_start]El desarrollo sigue además un enfoque de liderazgo democrático y colaborativo entre los desarrolladores[cite: 87].
 
-Consultar servicios disponibles
+## 👥 Desarrolladores
+* [cite_start]**Jared Sair Fernando Márquez Larios** [cite: 2]
+* [cite_start]**Edgar Alexis García Ruiz** [cite: 2]
 
-Agendar citas de manera autónoma
-
-Confirmar citas mediante un anticipo
-
-Visualizar citas activas
-
-Comunicarse con el spa mediante un chat básico
-
-La operación del spa se gestiona de forma automatizada, reduciendo la necesidad de interacción directa con la plataforma.
-
-🎯 Problema que resuelve
-
-Los spas pequeños suelen gestionar sus citas mediante mensajes o llamadas, lo que genera:
-
-Desorganización de horarios
-
-Falta de control sobre anticipos
-
-Saturación de mensajes
-
-Errores humanos
-
-Este proyecto busca centralizar y automatizar estos procesos en una sola plataforma web.
-
-🧩 Alcance funcional
-👤 Cliente
-
-Visualización de servicios
-
-Selección de fecha y horario
-
-Confirmación de cita mediante pago de anticipo
-
-Consulta de citas activas
-
-Chat en tiempo real para dudas rápidas
-
-🏢 Spa
-
-Recepción automática de notificaciones
-
-Confirmación de citas y pagos
-
-Acceso administrativo limitado (backend) para:
-
-visualización de citas del día
-
-atención de mensajes del chat
-
-Nota: el acceso administrativo está diseñado como una funcionalidad mínima y no como un panel de gestión completo.
-
-🏗️ Arquitectura del sistema
-
-El backend está organizado de forma modular:
-
-DTOs: validación y normalización de datos
-
-Domain: reglas de negocio
-
-Repositories: acceso a base de datos
-
-Integrations: conexión con servicios externos
-
-WebSocket: comunicación en tiempo real
-
-Admin (backend): acceso limitado para operaciones del spa
-
-Esta estructura facilita mantenimiento, escalabilidad y claridad del código.
-
-🛠️ Tecnologías
-
-Python
-
-Flask
-
-Base de datos SQL
-
-WebSocket
-
-Integración con pasarela de pago
-
-Integración con mensajería SMS
-
-📈 Evolución prevista
-
-El sistema está preparado para futuras mejoras, tales como:
-
-Interfaz administrativa web
-
-Visualización gráfica de citas del día
-
-Ampliación del chat
-
-Mejoras de seguridad
-
-Escalamiento a mayor volumen de usuarios
-
-🧠 Nota final
-
-Aunque el proyecto se desarrolla en un contexto académico, su diseño busca reflejar buenas prácticas de ingeniería de software, priorizando simplicidad, claridad y automatización.
-
-👨‍💻 Autores
-
-Jared Sair Fernando Márquez Larios
-
-Edgar Alexis García Ruiz
-
-📍 Guadalajara, Jalisco
-📅 2026
+---
+[cite_start]*Este proyecto fue iniciado en febrero de 2026 en Guadalajara, Jalisco[cite: 2].*
