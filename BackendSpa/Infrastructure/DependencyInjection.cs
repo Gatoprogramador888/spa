@@ -1,5 +1,7 @@
 ﻿using BackendSpa.Application.Interfaces;
+using BackendSpa.Domain.Interface;
 using BackendSpa.Infrastructure.Persistance;
+using BackendSpa.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +22,8 @@ namespace BackendSpa.Infrastructure
 
             services.AddScoped<IAppDbContext>(provider =>
                 provider.GetRequiredService<AppDbContext>());
+
+            services.AddScoped<ICalculoAnticipo, CalculoAnticipoService>();
 
             return services;
         }

@@ -3,7 +3,7 @@ using BackendSpa.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
 
-namespace BackendSpa.Application.Features.Citas.Querys
+namespace BackendSpa.Application.Features.Servicios.Querys
 {
     public class GetAllServicios : IRequestHandler<GetServiciosQuery, List<ServicioDto>>
     {

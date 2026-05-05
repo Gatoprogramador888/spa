@@ -1,4 +1,4 @@
-﻿namespace BackendSpa.Application.Features.Servicios.DTO
+﻿namespace BackendSpa.Application.Features.Citas.DTO
 {
     public record CitaDto(
         int IdCita,
@@ -12,5 +12,14 @@
         string Estado,        
         decimal PrecioTotal,
         decimal Anticipo
+    );
+
+    public record CrearCitaDto(
+        string NombreCliente,
+        string Email,
+        string Telefono,
+        DateTime Fecha,
+        TimeSpan HoraInicio,
+        List<int> IdServicios
     );
 }

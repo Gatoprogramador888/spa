@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\citas\\querys\\getestadisponiblehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\citas\\querys\\getestadisponiblehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\citas\\querys\\getcrearcita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\citas\\querys\\getcrearcita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\servicios\\dto\\citadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\servicios\\dto\\citadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\citas\\querys\\getallservicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\citas\\querys\\getallservicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\citas\\querys\\getdisponibilidadquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\citas\\querys\\getdisponibilidadquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\citas\\citadetalles\\querys\\getcitaservicioquerys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\citas\\citadetalles\\querys\\getcitaservicioquerys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetAllServicios.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetAllServicios.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Citas\\Querys\\GetAllServicios.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetAllServicios.cs",
-              "RelativeToolTip": "Application\\Features\\Citas\\Querys\\GetAllServicios.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T01:11:07.452Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CitaDTO.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Servicios\\DTO\\CitaDTO.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Servicios\\DTO\\CitaDTO.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Servicios\\DTO\\CitaDTO.cs",
-              "RelativeToolTip": "Application\\Features\\Servicios\\DTO\\CitaDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "GetCitaServicioQuerys.cs",
+              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\CitaDetalles\\Querys\\GetCitaServicioQuerys.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Citas\\CitaDetalles\\Querys\\GetCitaServicioQuerys.cs",
+              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\CitaDetalles\\Querys\\GetCitaServicioQuerys.cs",
+              "RelativeToolTip": "Application\\Features\\Citas\\CitaDetalles\\Querys\\GetCitaServicioQuerys.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T01:10:49.443Z",
+              "WhenOpened": "2026-05-05T20:41:45.756Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GetEstaDisponibleHandler.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetEstaDisponibleHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Citas\\Querys\\GetEstaDisponibleHandler.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetEstaDisponibleHandler.cs",
-              "RelativeToolTip": "Application\\Features\\Citas\\Querys\\GetEstaDisponibleHandler.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "GetCrearCita.cs",
+              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetCrearCita.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Citas\\Querys\\GetCrearCita.cs",
+              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetCrearCita.cs",
+              "RelativeToolTip": "Application\\Features\\Citas\\Querys\\GetCrearCita.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAYwAQAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T00:54:21.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetDisponibilidadQuery.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetDisponibilidadQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Citas\\Querys\\GetDisponibilidadQuery.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetDisponibilidadQuery.cs",
-              "RelativeToolTip": "Application\\Features\\Citas\\Querys\\GetDisponibilidadQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T00:34:39.581Z",
+              "WhenOpened": "2026-05-05T18:08:57.526Z",
               "EditorCaption": ""
             }
           ]

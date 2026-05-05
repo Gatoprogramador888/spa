@@ -1,7 +1,7 @@
 ﻿using BackendSpa.Application.Features.Servicios.DTO;
 using MediatR;
 
-namespace BackendSpa.Application.Features.Citas.Querys
+namespace BackendSpa.Application.Features.Servicios.Querys
 {
     public record GetServiciosQuery() : IRequest<List<ServicioDto>>;
 

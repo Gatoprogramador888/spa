@@ -4,7 +4,7 @@ using BackendSpa.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace BackendSpa.Application.Features.Citas.Querys
+namespace BackendSpa.Application.Features.Servicios.Querys
 {
     public class GetCreateServicio : IRequestHandler<GetCreateServicioQuery, ServicioDto?>
     {

@@ -44,7 +44,7 @@ namespace BackendSpa.Application.Features.Citas.Querys
 
             //Si es nulo si esta disponible
             bool respuesta = cita is null;
-            return new Responsive<bool>(true, respuesta ? "esta disponible" : "no esta disponible" , respuesta);
+            return new Responsive<bool>(true, respuesta ? "hora disponible" : "hora no disponible" , respuesta);
         }
     }
 }
