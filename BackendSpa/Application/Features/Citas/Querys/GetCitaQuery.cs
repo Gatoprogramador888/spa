@@ -5,5 +5,5 @@ using MediatR;
 
 namespace BackendSpa.Application.Features.Citas.Querys
 {
-    public record GetCreateCita(CrearCitaDto cita, ICalculoAnticipo CalculoAnticipo) : IRequest<Responsive<CitaDto>>;
+    public record GetCreateCita(CrearCitaDto cita) : IRequest<Responsive<CitaDto>>;
 }

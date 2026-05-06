@@ -3,6 +3,7 @@ using BackendSpa.Application.Interfaces;
 using BackendSpa.Application.Common.Responsive;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using BackendSpa.Application.Features.Citas.DTO;
 
 namespace BackendSpa.Application.Features.Citas.Querys
 {
@@ -28,7 +29,8 @@ namespace BackendSpa.Application.Features.Citas.Querys
                 //Validar el dia
                 c.Fecha == request.cita.Fecha && 
                 c.HoraInicio < request.cita.HoraFin &&
-                c.HoraFin > request.cita.HoraInicio).
+                c.HoraFin > request.cita.HoraInicio &&
+                c.Estado != Domain.EstadoCita.Cancelada).
             Include( c => c.Cliente).Select
             (c => new CitaDto(
             c.IdCita,                                     

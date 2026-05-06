@@ -2,11 +2,14 @@
 using BackendSpa.Application.Features.Citas.CitaDetalles.DTO;
 using BackendSpa.Application.Features.Citas.CitaDetalles.Querys;
 using BackendSpa.Application.Features.Citas.DTO;
+using BackendSpa.Application.Features.Clientes.DTO;
 using BackendSpa.Application.Features.Clientes.Querys;
+using BackendSpa.Application.Features.Pagos.Querys;
 using BackendSpa.Application.Features.Servicios.DTO;
 using BackendSpa.Application.Features.Servicios.Querys;
 using BackendSpa.Application.Interfaces;
 using BackendSpa.Domain;
+using BackendSpa.Domain.Interface;
 using MediatR;
 
 namespace BackendSpa.Application.Features.Citas.Querys
@@ -16,12 +19,14 @@ namespace BackendSpa.Application.Features.Citas.Querys
         private readonly IAppDbContext _db;
         private readonly ISender _mediator;
         readonly int horasDepilacion = 120;
+        private readonly ICalculoAnticipo _anticipo;
 
 
-        public GetCrearCita(IAppDbContext db, ISender mediator)
+        public GetCrearCita(IAppDbContext db, ISender mediator, ICalculoAnticipo anticipo)
         {
             _db = db;
             _mediator = mediator;
+            _anticipo = anticipo;
         }
 
         public async Task<Responsive<CitaDto>> Handle(GetCreateCita request, CancellationToken cancellationToken)
@@ -40,7 +45,7 @@ namespace BackendSpa.Application.Features.Citas.Querys
                 tiempo += (int)(servicio.DuracionMin is not null ? servicio.DuracionMin : horasDepilacion);
             }
 
-            TimeSpan horaFinal = new(cita.HoraInicio.Hours + tiempo, cita.HoraInicio.Minutes, cita.HoraInicio.Seconds);
+            TimeSpan horaFinal = cita.HoraInicio.Add(TimeSpan.FromMinutes(tiempo));
 
             DisponibilidadDTO disponibilidadDTO = new(cita.Fecha, cita.HoraInicio, horaFinal);
 
@@ -61,14 +66,32 @@ namespace BackendSpa.Application.Features.Citas.Querys
                 precio += servicio.Precio;
             }
 
-            decimal anticipo = request.CalculoAnticipo.Calcular(precio);
+            decimal anticipo = _anticipo.Calcular(precio);
 
             //Request cliente para saber si existe o no
             var EntidadCliente = await _mediator.Send(new GetClienteByName(cita.NombreCliente), cancellationToken);
 
+            int id_cliente = 0;
+            var citaDto = request.cita;
+            
+            if(EntidadCliente.Data is null)
+            {
+                var cliente = await _mediator.Send(new GetCreateCliente(new ClienteDto(0,
+                    citaDto.NombreCliente,
+                    citaDto.Email,
+                    citaDto.Telefono)), cancellationToken);
+
+                id_cliente = cliente.Data?.IdCliente
+                ?? throw new ArgumentException(cliente.Mensaje);
+            }
+            else
+            {
+                id_cliente = EntidadCliente.Data.IdCliente;
+            }
+
             Cita entidad = new()
             {
-                IdCliente = 0,          
+                IdCliente = id_cliente,          
                 Fecha = request.cita.Fecha,
                 HoraInicio = request.cita.HoraInicio,
                 HoraFin = horaFinal,
@@ -85,7 +108,7 @@ namespace BackendSpa.Application.Features.Citas.Querys
             //Respuesta
             CitaDto dto = new(
                 entidad.IdCita,
-                EntidadCliente.Data!.IdCliente,
+                id_cliente,
                 cita.NombreCliente,
                 cita.Fecha,
                 cita.HoraInicio,
@@ -105,7 +128,19 @@ namespace BackendSpa.Application.Features.Citas.Querys
 
             await _mediator.Send(new GetCitaServicioCreate(citaServicioDtos), cancellationToken);
 
-            return new Responsive<CitaDto>(true, "", dto);
+            var pago = await _mediator.Send(
+            new CrearPreferenciaCommand(entidad.IdCita, anticipo),
+                cancellationToken
+            );
+
+            if (!pago.Success)
+            {
+                entidad.Estado = EstadoCita.Cancelada;
+                await _db.SaveChangesAsync(cancellationToken);
+                return new Responsive<CitaDto>(false, pago.Mensaje, null);
+            }
+
+            return new Responsive<CitaDto>(true, pago.Data!, dto);
         }
     }
 }

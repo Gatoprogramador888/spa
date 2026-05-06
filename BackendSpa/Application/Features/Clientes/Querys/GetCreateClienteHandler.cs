@@ -53,7 +53,9 @@ namespace BackendSpa.Application.Features.Clientes.Querys
 
             await _db.SaveChangesAsync(cancellationToken);
 
-            return new Responsive<ClienteDto>(true, "", cliente);
+            ClienteDto responsive = new(entidad.IdCliente, cliente.Nombre, cliente.Email, cliente.Telefono);
+
+            return new Responsive<ClienteDto>(true, "", responsive);
         }
     }
 }
