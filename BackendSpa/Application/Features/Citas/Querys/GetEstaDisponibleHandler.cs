@@ -10,7 +10,7 @@ namespace BackendSpa.Application.Features.Citas.Querys
     public class GetEstaDisponibleHandler : IRequestHandler<GetEstaDisponibleQuery, Responsive<bool>>
     {
         private readonly IAppDbContext _db;
-        private readonly TimeSpan HoraEntrada = new(8, 0, 0), HoraSalida = new(20,0,0);
+        private readonly TimeSpan HoraEntrada = new(7, 59, 59), HoraSalida = new(20,0,0);
         private readonly double diferenciaHorarioUtcAGdl = 6; 
 
         public GetEstaDisponibleHandler(IAppDbContext db)
@@ -21,7 +21,7 @@ namespace BackendSpa.Application.Features.Citas.Querys
         public async Task<Responsive<bool>> Handle(GetEstaDisponibleQuery request, CancellationToken cancellationToken)
         {
 
-            if (HoraEntrada >= request.cita.HoraInicio || HoraSalida <= request.cita.HoraFin) return new Responsive<bool>(
+            if (HoraEntrada >= request.cita.HoraInicio || HoraSalida <= request.cita.HoraInicio) return new Responsive<bool>(
                 false,"la hora pedida esta fuera de las horas de trabajo",false
                 );
 

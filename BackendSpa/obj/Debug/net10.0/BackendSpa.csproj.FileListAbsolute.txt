@@ -49,3 +49,4 @@ C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\obj\Debug\net10.0\refint\Backe
 C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\obj\Debug\net10.0\BackendSpa.pdb
 C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\obj\Debug\net10.0\BackendSpa.genruntimeconfig.cache
 C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\obj\Debug\net10.0\ref\BackendSpa.dll
+C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\bin\Debug\net10.0\appsettings.json

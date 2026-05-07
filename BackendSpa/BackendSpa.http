@@ -27,7 +27,7 @@ Accept: application/json
 ###
 
 ### ❌ Verificar disponibilidad fuera de horario laboral
-GET {{BackendSpa_HostAddress}}/api/citas/disponibilidad?Fecha=2026-05-06&HoraInicio=22:00:00&HoraFin=23:00:00
+GET {{BackendSpa_HostAddress}}/api/citas/disponibilidad?Fecha=2026-05-08&HoraInicio=20:00:00&HoraFin=10:00:00
 Accept: application/json
 
 ###
@@ -100,8 +100,8 @@ Content-Type: application/json
   "nombreCliente": "Maria Lopez",
   "email": "maria@gmail.com",
   "telefono": "3312345678",
-  "fecha": "2026-05-06",
-  "horaInicio": "10:00:00",
+  "fecha": "2026-05-07",
+  "horaInicio": "11:00:00",
   "idServicios": []
 }
 
