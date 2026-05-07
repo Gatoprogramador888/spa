@@ -1,4 +1,7 @@
 ---
+title: La Volta Vida - SPA VIP
+author: Jared Márquez & Edgar García
+---
 
 # La Volta Vida - SPA VIP 🌿
 
