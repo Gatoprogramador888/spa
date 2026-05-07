@@ -23,10 +23,13 @@ namespace BackendSpa.Infrastructure.Services
             try
             {
                 var message = await MessageResource.CreateAsync(
-                    to: new Twilio.Types.PhoneNumber(destinatario),
-                    from: new Twilio.Types.PhoneNumber(_fromNumber),
-                    body: mensaje
+                to: new Twilio.Types.PhoneNumber($"whatsapp:{destinatario}"),
+                from: new Twilio.Types.PhoneNumber($"whatsapp:{_fromNumber}"),
+                body: mensaje
                 );
+
+                if(message.Status != MessageResource.StatusEnum.Accepted)
+                    throw new ArgumentException($"Twilio status: status: message.Status - sid: message.Sid");
 
                 return new Responsive<bool>(true, "", true);
             }

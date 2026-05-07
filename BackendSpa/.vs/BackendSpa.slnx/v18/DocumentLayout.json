@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\controllers\\citascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:controllers\\citascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\middlewares\\errorhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:middlewares\\errorhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\pagos\\querys\\procesarwebhookhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\pagos\\querys\\procesarwebhookhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\backendspa.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:backendspa.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Title": "CitasController.cs",
+              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Controllers\\CitasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CitasController.cs",
+              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Controllers\\CitasController.cs",
+              "RelativeToolTip": "Controllers\\CitasController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T02:52:09.206Z",
+              "WhenOpened": "2026-05-06T23:54:39.769Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ErrorHandlingMiddleware.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Middlewares\\ErrorHandlingMiddleware.cs",
-              "RelativeDocumentMoniker": "Middlewares\\ErrorHandlingMiddleware.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Middlewares\\ErrorHandlingMiddleware.cs",
-              "RelativeToolTip": "Middlewares\\ErrorHandlingMiddleware.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAABvAAAAAAAAAA==",
+              "Title": "ProcesarWebhookHandler.cs",
+              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Pagos\\Querys\\ProcesarWebhookHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Pagos\\Querys\\ProcesarWebhookHandler.cs",
+              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Pagos\\Querys\\ProcesarWebhookHandler.cs",
+              "RelativeToolTip": "Application\\Features\\Pagos\\Querys\\ProcesarWebhookHandler.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAADwvywAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T02:47:18.91Z",
+              "WhenOpened": "2026-05-06T23:44:05.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BackendSpa.http",
+              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\BackendSpa.http",
+              "RelativeDocumentMoniker": "BackendSpa.http",
+              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\BackendSpa.http",
+              "RelativeToolTip": "BackendSpa.http",
+              "ViewState": "AgIAABcAAAAAAAAAAAAkwKIAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-05-06T15:28:21.748Z",
               "EditorCaption": ""
             }
           ]

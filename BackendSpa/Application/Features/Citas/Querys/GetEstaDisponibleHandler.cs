@@ -11,6 +11,7 @@ namespace BackendSpa.Application.Features.Citas.Querys
     {
         private readonly IAppDbContext _db;
         private readonly TimeSpan HoraEntrada = new(8, 0, 0), HoraSalida = new(20,0,0);
+        private readonly double diferenciaHorarioUtcAGdl = 6; 
 
         public GetEstaDisponibleHandler(IAppDbContext db)
         {
@@ -20,9 +21,26 @@ namespace BackendSpa.Application.Features.Citas.Querys
         public async Task<Responsive<bool>> Handle(GetEstaDisponibleQuery request, CancellationToken cancellationToken)
         {
 
-            if (request.cita.HoraInicio >= HoraEntrada && request.cita.HoraFin <= HoraSalida) return new Responsive<bool>(
+            if (HoraEntrada >= request.cita.HoraInicio || HoraSalida <= request.cita.HoraFin) return new Responsive<bool>(
                 false,"la hora pedida esta fuera de las horas de trabajo",false
                 );
+
+            DateTime Fecha = request.cita.Fecha;
+            TimeSpan Horario = request.cita.HoraInicio;
+            DateTime FechaTotalCitaGDL = new DateTime(
+                Fecha.Year, 
+                Fecha.Month, 
+                Fecha.Day, 
+                Horario.Hours, 
+                Horario.Minutes,
+                Horario.Seconds
+                );
+            DateTime FechaTotaCitaUTC = FechaTotalCitaGDL.AddHours(diferenciaHorarioUtcAGdl); 
+
+            if(DateTime.UtcNow >= FechaTotaCitaUTC) 
+            {
+                return new Responsive<bool>(false, "La hora pedida ya transcurrio elija nueva fecha", false);
+            }
 
             var cita = await _db.Citas.Where(
                 c =>

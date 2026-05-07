@@ -21,6 +21,7 @@ namespace BackendSpa.Middlewares
             try
             {
                 await _next(context);
+                _logger.LogInformation("Sin excepciones");
             }
             catch (ArgumentException ex)
             {

@@ -17,10 +17,11 @@ namespace BackendSpa.Application.Features.Clientes.Querys
         {
             int id_cliente = request.id;
 
-            var cliente = await _db.Clientes.FindAsync(id_cliente, cancellationToken) ??
-                throw new ArgumentException($"el id {id_cliente} no existe");
+            var cliente = await _db.Clientes.FindAsync(id_cliente, cancellationToken);
 
-            ClienteDto dto = new(cliente.IdCliente, cliente.Nombre, cliente.Email, cliente.Telefono);
+            if (cliente is null) new Responsive<ClienteDto>(false, $"el id {id_cliente} no existe", null);
+
+            ClienteDto dto = new(cliente!.IdCliente, cliente.Nombre, cliente.Email, cliente.Telefono);
 
             return new Responsive<ClienteDto>(true, "", dto);
         }

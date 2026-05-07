@@ -18,10 +18,11 @@ namespace BackendSpa.Application.Features.Clientes.Querys
         public async Task<Responsive<ClienteDto>> Handle(GetClienteByName request, CancellationToken cancellationToken)
         {
             string name = request.Name;
-            var cliente = await _db.Clientes.FirstOrDefaultAsync(c => c.Nombre == name, cancellationToken) ??
-                throw new ArgumentException($"el nombre {name} no existe");
+            var cliente = await _db.Clientes.FirstOrDefaultAsync(c => c.Nombre == name, cancellationToken);
 
-            ClienteDto dto = new(cliente.IdCliente, cliente.Nombre, cliente.Email, cliente.Telefono);
+            if (cliente is null) return new Responsive<ClienteDto>(false, $"el nombre {name} no existe", null);
+
+            ClienteDto dto = new(cliente!.IdCliente, cliente.Nombre, cliente.Email, cliente.Telefono);
 
             return new Responsive<ClienteDto>(true, "", dto);
         }

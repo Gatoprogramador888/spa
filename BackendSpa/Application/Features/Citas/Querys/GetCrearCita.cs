@@ -81,6 +81,8 @@ namespace BackendSpa.Application.Features.Citas.Querys
                     citaDto.Email,
                     citaDto.Telefono)), cancellationToken);
 
+
+
                 id_cliente = cliente.Data?.IdCliente
                 ?? throw new ArgumentException(cliente.Mensaje);
             }

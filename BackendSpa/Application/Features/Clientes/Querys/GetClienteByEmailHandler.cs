@@ -18,10 +18,11 @@ namespace BackendSpa.Application.Features.Clientes.Querys
         public async Task<Responsive<ClienteDto>> Handle(GetClienteByEmail request, CancellationToken cancellationToken)
         {
             string email = request.Email;
-            var cliente = await _db.Clientes.FirstOrDefaultAsync(c => c.Email == email, cancellationToken) ??
-                throw new ArgumentException($"el email {email} no existe");
+            var cliente = await _db.Clientes.FirstOrDefaultAsync(c => c.Email == email, cancellationToken);
 
-            ClienteDto dto = new(cliente.IdCliente, cliente.Nombre, cliente.Email, cliente.Telefono);
+            if (cliente is null) return new Responsive<ClienteDto>(false, $"el email {email} no existe", null);
+
+            ClienteDto dto = new(cliente!.IdCliente, cliente.Nombre, cliente.Email, cliente.Telefono);
 
             return new Responsive<ClienteDto>(true, "", dto);
         }

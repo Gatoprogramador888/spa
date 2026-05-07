@@ -55,7 +55,7 @@
           "dependencies": {
             "MediatR": {
               "target": "Package",
-              "version": "[14.1.0, )"
+              "version": "[12.4.1, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
@@ -63,7 +63,7 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[10.0.7, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Http.Polly": {
               "target": "Package",

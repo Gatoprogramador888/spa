@@ -39,5 +39,16 @@ namespace BackendSpa.Controllers
 
             return Ok(resultado);
         }
+
+        [HttpDelete("cancelarcita/{id}")]
+        public async Task<IActionResult> CancelarCita([FromRoute] int id)
+        {
+            var resultado = await _mediator.Send(new CancelarCitaCommand(id));
+
+            if (!resultado.Success)
+                return BadRequest(resultado.Mensaje);
+
+            return Ok(resultado);
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace BackendSpa.Application.Features.Clientes.Querys
             var cliente = request.cliente;
             const string validatorName = @"[A-Za-z]";
             const string validatorEmail = @"[a-z0-9.]+@[a-z0-9]+\.[a-z]+";
-            const string validatorNumber = @"[0-9]";
+            const string validatorNumber = @"^\+\d{10,15}$";
 
 
             bool isNameValid = Regex.IsMatch(cliente.Nombre, validatorName);

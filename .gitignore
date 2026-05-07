@@ -1,2 +1,3 @@
-/Bakend/.env
-/Bakend/.env.example
+**/appsettings.Development.json
+**/bin/
+**/obj/

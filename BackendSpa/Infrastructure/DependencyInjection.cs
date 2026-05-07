@@ -1,5 +1,6 @@
 ﻿using BackendSpa.Application.Interfaces;
 using BackendSpa.Domain.Interface;
+using BackendSpa.Infrastructure.BackgroundServices;
 using BackendSpa.Infrastructure.Persistance;
 using BackendSpa.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
@@ -24,13 +25,18 @@ namespace BackendSpa.Infrastructure
             services.AddScoped<IAppDbContext>(provider =>
                 provider.GetRequiredService<AppDbContext>());
 
-            services.AddScoped<ICalculoAnticipo, CalculoAnticipoService>();
+            services.AddScoped<IPlataformaPago, MercadoPagoService>();
             services.AddScoped<INotificacion, TwilioService>();
 
+            services.AddScoped<ICalculoAnticipo, CalculoAnticipoService>();
+
+            services.AddHostedService<CitasPendientesJob>();
+
+            //Hacer 3 intentos antes de decir que ya se fallo completamente
             services.AddHttpClient<MercadoPagoService>()
             .AddTransientHttpErrorPolicy(policy =>
                 policy.WaitAndRetryAsync(3, retryAttempt =>
-                TimeSpan.FromSeconds(retryAttempt)  // intento 1→1s, 2→2s, 3→3s
+                TimeSpan.FromSeconds(retryAttempt)  
             )
             );
 

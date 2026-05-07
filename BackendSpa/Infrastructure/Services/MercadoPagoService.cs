@@ -10,12 +10,13 @@ using static System.Net.WebRequestMethods;
 
 namespace BackendSpa.Infrastructure.Services
 {
-    public class MercadoPagoService(HttpClient httpClient, string accessToken, IConfiguration configuration) : IPlataformaPago
+    public class MercadoPagoService(HttpClient httpClient, IConfiguration configuration) : IPlataformaPago
     {
         private readonly HttpClient _http = httpClient;
-        private readonly string _accessToken = accessToken;
-        private const string BaseUrl = "https://api.mercadopago.com";
+        private readonly string _accessToken = configuration["MercadoPago:AccessToken"]!;
         private readonly IConfiguration _config = configuration;
+        private const string BaseUrl = "https://api.mercadopago.com";
+
         public async Task<Responsive<string>> CrearPreferenciaAsync(int idCita, decimal anticipo, string descripcion)
         {
             try
