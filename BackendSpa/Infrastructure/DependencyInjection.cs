@@ -31,6 +31,7 @@ namespace BackendSpa.Infrastructure
             services.AddScoped<ICalculoAnticipo, CalculoAnticipoService>();
 
             services.AddHostedService<CitasPendientesJob>();
+            services.AddHostedService<NotificacionesFallidasJob>();
 
             //Hacer 3 intentos antes de decir que ya se fallo completamente
             services.AddHttpClient<MercadoPagoService>()

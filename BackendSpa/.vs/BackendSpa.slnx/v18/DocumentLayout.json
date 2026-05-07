@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\infrastructure\\services\\twilioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:infrastructure\\services\\twilioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\infrastructure\\backgroundservices\\notificacionesfallidasjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:infrastructure\\backgroundservices\\notificacionesfallidasjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\backendspa.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TwilioService.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Infrastructure\\Services\\TwilioService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Services\\TwilioService.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Infrastructure\\Services\\TwilioService.cs",
-              "RelativeToolTip": "Infrastructure\\Services\\TwilioService.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAwwCMAAAAdAAAAAAAAAA==",
+              "Title": "NotificacionesFallidasJob.cs",
+              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Infrastructure\\BackgroundServices\\NotificacionesFallidasJob.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\BackgroundServices\\NotificacionesFallidasJob.cs",
+              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Infrastructure\\BackgroundServices\\NotificacionesFallidasJob.cs",
+              "RelativeToolTip": "Infrastructure\\BackgroundServices\\NotificacionesFallidasJob.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwDAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T00:36:53.322Z",
+              "WhenOpened": "2026-05-07T00:49:07.082Z",
               "EditorCaption": ""
             },
             {
@@ -43,8 +43,7 @@
               "RelativeToolTip": "BackendSpa.http",
               "ViewState": "AgIAABcAAAAAAAAAAAA5wKIAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-05-06T15:28:21.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-06T15:28:21.748Z"
             }
           ]
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackendSpa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fafa55fc3e245d96e8c930271a1a9077c5f42d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0668091471f65afd9337cf25f29643377bd62c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackendSpa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackendSpa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
