@@ -28,10 +28,12 @@ namespace BackendSpa.Infrastructure.Services
                 body: mensaje
                 );
 
-                if(message.Status != MessageResource.StatusEnum.Accepted)
-                    throw new ArgumentException($"Twilio status: status: message.Status - sid: message.Sid");
+                bool exitoso = message.Status != MessageResource.StatusEnum.Failed
+            && message.Status != MessageResource.StatusEnum.Undelivered;
 
-                return new Responsive<bool>(true, "", true);
+                return new Responsive<bool>(exitoso,
+                    exitoso ? "" : $"Twilio status: {message.Status}",
+                    exitoso);
             }
             catch (Exception ex)
             {

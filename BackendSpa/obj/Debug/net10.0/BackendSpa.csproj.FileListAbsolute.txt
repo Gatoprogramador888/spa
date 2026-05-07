@@ -8,7 +8,6 @@ C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\obj\Debug\net10.0\BackendSpa.M
 C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\obj\Debug\net10.0\BackendSpa.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\obj\Debug\net10.0\BackendSpa.sourcelink.json
 C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\bin\Debug\net10.0\appsettings.Development.json
-C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\bin\Debug\net10.0\appsettings.json
 C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\bin\Debug\net10.0\BackendSpa.staticwebassets.endpoints.json
 C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\bin\Debug\net10.0\BackendSpa.exe
 C:\Users\gatob\OneDrive\Documentos\spa\BackendSpa\bin\Debug\net10.0\BackendSpa.deps.json
