@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "BackendSpa.http",
               "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\BackendSpa.http",
               "RelativeToolTip": "BackendSpa.http",
-              "ViewState": "AgIAABMAAAAAAAAAAAAqwB0AAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2026-05-07T16:17:54.697Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Application\\Features\\Citas\\Querys\\GetEstaDisponibleHandler.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwBQAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T16:13:56.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T16:13:56.698Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "Infrastructure\\BackgroundServices\\NotificacionesFallidasJob.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAcwDAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T00:49:07.082Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T00:49:07.082Z"
             }
           ]
         }
