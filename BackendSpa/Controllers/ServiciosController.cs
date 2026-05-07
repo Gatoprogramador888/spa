@@ -1,12 +1,14 @@
 ﻿using BackendSpa.Application.Features.Servicios.Querys;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace BackendSpa.Controllers
 {
 
     [ApiController]
     [Route("api/servicios")]
+    [EnableRateLimiting("servicios-policy")]
     public class ServiciosController : ControllerBase
     {
         private readonly ISender _mediator;

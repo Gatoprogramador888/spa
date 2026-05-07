@@ -21,7 +21,7 @@ Accept: application/json
 ###
 
 ### ✅ Verificar disponibilidad en horario libre
-GET {{BackendSpa_HostAddress}}/api/citas/disponibilidad?Fecha=2026-05-06&HoraInicio=10:00:00&HoraFin=11:00:00
+GET {{BackendSpa_HostAddress}}/api/citas/disponibilidad?Fecha=2026-05-09&HoraInicio=10:00:00&HoraFin=11:00:00
 Accept: application/json
 
 ###

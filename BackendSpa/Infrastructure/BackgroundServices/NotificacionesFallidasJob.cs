@@ -3,6 +3,7 @@ using BackendSpa.Application.Features.Notificaciones.Querys;
 using BackendSpa.Application.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Twilio.Http;
 
 namespace BackendSpa.Infrastructure.BackgroundServices
 {
@@ -11,6 +12,7 @@ namespace BackendSpa.Infrastructure.BackgroundServices
         private readonly IServiceScopeFactory _scopeFactory;
         private readonly ILogger<NotificacionesFallidasJob> _logger;
         private readonly TimeSpan _intervalo = TimeSpan.FromHours(1);
+        private readonly double diferenciaHorarioUtcAGdl = -6;
 
         public NotificacionesFallidasJob(IServiceScopeFactory scopeFactory, ILogger<NotificacionesFallidasJob> logger)
         {
@@ -34,7 +36,9 @@ namespace BackendSpa.Infrastructure.BackgroundServices
             var mediator = scope.ServiceProvider.GetRequiredService<ISender>();
 
             var notificaciones = await db.Notificaciones
-                .Where(n => n.Status == "fallido")
+                .Where(n => n.Status == "fallido" &&
+                    n.Cita.Fecha < DateTime.UtcNow.AddDays(diferenciaHorarioUtcAGdl)
+                )
                 .ToListAsync(cancellationToken);
 
             _logger.LogInformation("Notificaciones fallidas a reintentar: {Count}", notificaciones.Count);

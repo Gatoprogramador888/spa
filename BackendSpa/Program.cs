@@ -18,11 +18,14 @@ builder.Services.AddMediatR(cfg =>
 
 // Infrastructure — DbContext, MP, Twilio
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddRateLimitingPolicies(builder.Configuration);
 
 // OpenAPI
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+app.UseRateLimiter();
 
 if (app.Environment.IsDevelopment())
 {
@@ -53,5 +56,6 @@ app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+app.MapGet("/", () => "Bienvenido a la volta vida");
 
 app.Run();

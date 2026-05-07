@@ -2,11 +2,13 @@
 using BackendSpa.Application.Features.Citas.Querys;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace BackendSpa.Controllers
 {
     [ApiController]
     [Route("api/citas")]
+    [EnableRateLimiting("citas-policy")]
     public class CitasController : ControllerBase
     {
         private readonly ISender _mediator;

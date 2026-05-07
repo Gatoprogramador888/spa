@@ -21,6 +21,13 @@ namespace BackendSpa.Middlewares
             try
             {
                 await _next(context);
+
+                if (context.Response.HasStarted && context.Response.StatusCode == 429)
+                {
+                    _logger.LogInformation("alguien se paso de la raya");
+                    return; 
+                }
+
                 _logger.LogInformation("Sin excepciones");
             }
             catch (ArgumentException ex)
