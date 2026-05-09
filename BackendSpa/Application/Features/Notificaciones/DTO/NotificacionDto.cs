@@ -1,4 +1,6 @@
-﻿namespace BackendSpa.Application.Features.Notificaciones.DTO
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BackendSpa.Application.Features.Notificaciones.DTO
 {
     public class NotificacionDto
     {
@@ -13,7 +15,8 @@
         public string Mensaje { get; set; } = string.Empty;
         public string Status { get; set; } = "pendiente";
         public DateTime? EnviadoEn { get; set; }
-
+        public int Intentos { get; set; } = 0;
+        public string? ErrorDetalle { get; set; }
         public string? InfoCita { get; set; }
     }
 }

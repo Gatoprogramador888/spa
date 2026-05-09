@@ -40,8 +40,8 @@ Content-Type: application/json
   "nombreCliente": "Edgar",
   "email": "edgar@gmail.com",
   "telefono": "+5213312566287",
-  "fecha": "2026-05-07",
-  "horaInicio": "14:00:00",
+  "fecha": "2026-05-16",
+  "horaInicio": "8:00:00",
   "idServicios": [1, 2]
 }
 

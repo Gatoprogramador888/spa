@@ -31,17 +31,6 @@ namespace BackendSpa.Infrastructure
                 {
                     context.HttpContext.Response.StatusCode = 429;
 
-                    var loggerFactory = context.HttpContext.RequestServices
-                    .GetRequiredService<ILoggerFactory>();
-
-                    var logger = loggerFactory.CreateLogger("RateLimiting");
-
-                    logger.LogWarning(
-                        "Rate limit excedido — IP: {IP} | Path: {Path}",
-                        context.HttpContext.Connection.RemoteIpAddress,
-                        context.HttpContext.Request.Path
-                    );
-
                     await context.HttpContext.Response.WriteAsJsonAsync(new
                     {
                         error = "Too Many Requests"

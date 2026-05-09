@@ -27,12 +27,11 @@ namespace BackendSpa.Infrastructure.Services
                 from: new Twilio.Types.PhoneNumber($"whatsapp:{_fromNumber}"),
                 body: mensaje
                 );
-
                 bool exitoso = message.Status != MessageResource.StatusEnum.Failed
             && message.Status != MessageResource.StatusEnum.Undelivered;
 
                 return new Responsive<bool>(exitoso,
-                    exitoso ? "" : $"Twilio status: {message.Status}",
+                    exitoso ? "" : $"Twilio status: {message.Status} --message: {message.ErrorMessage}",
                     exitoso);
             }
             catch (Exception ex)

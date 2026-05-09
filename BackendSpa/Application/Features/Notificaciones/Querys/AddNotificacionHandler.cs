@@ -20,7 +20,7 @@ namespace BackendSpa.Application.Features.Notificaciones.Querys
 
             var resultadoSms = await _notificacion.EnviarMensajeAsync(dto.Destinatario, dto.Mensaje);
 
-            Domain.Notificacion notificacion = new()
+            Notificacion notificacion = new()
             {
                 IdCita = dto.IdCita,
                 Destinatario = dto.Destinatario,
@@ -28,6 +28,8 @@ namespace BackendSpa.Application.Features.Notificaciones.Querys
                 Mensaje = dto.Mensaje,
                 Status = resultadoSms.Success ? "enviado" : "fallido",
                 EnviadoEn = resultadoSms.Success ? DateTime.UtcNow : null,
+                Intentos = 0,
+                ErrorDetalle = resultadoSms.Mensaje,
             };
 
             await _db.Notificaciones.AddAsync(notificacion, cancellationToken);

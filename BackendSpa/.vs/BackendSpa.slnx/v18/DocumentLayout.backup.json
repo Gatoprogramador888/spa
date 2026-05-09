@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\infrastructure\\ratelimitingextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:infrastructure\\ratelimitingextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\backendspa.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:backendspa.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RateLimitingExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Infrastructure\\RateLimitingExtensions.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\RateLimitingExtensions.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Infrastructure\\RateLimitingExtensions.cs*",
-              "RelativeToolTip": "Infrastructure\\RateLimitingExtensions.cs*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T22:37:12.4Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-09T01:29:25.392Z",
               "EditorCaption": ""
             },
             {
@@ -45,22 +41,9 @@
               "RelativeDocumentMoniker": "BackendSpa.http",
               "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\BackendSpa.http",
               "RelativeToolTip": "BackendSpa.http",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBcAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAzwCsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2026-05-07T22:06:23.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAmwDoAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T21:51:59.245Z",
               "EditorCaption": ""
             }
           ]

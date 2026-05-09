@@ -32,6 +32,12 @@ namespace BackendSpa.Domain
         [Column("enviado_en")]
         public DateTime? EnviadoEn { get; set; }
 
+        [Column("intentos")]
+        public int Intentos { get; set; } = 0;
+
+        [Column("errorDetalle")]
+        public string? ErrorDetalle { get; set; }
+
         [ForeignKey("IdCita")]
         public Cita Cita { get; set; } = null!;
     }

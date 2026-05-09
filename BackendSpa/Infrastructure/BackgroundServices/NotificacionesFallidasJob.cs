@@ -3,7 +3,6 @@ using BackendSpa.Application.Features.Notificaciones.Querys;
 using BackendSpa.Application.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Twilio.Http;
 
 namespace BackendSpa.Infrastructure.BackgroundServices
 {
@@ -13,6 +12,7 @@ namespace BackendSpa.Infrastructure.BackgroundServices
         private readonly ILogger<NotificacionesFallidasJob> _logger;
         private readonly TimeSpan _intervalo = TimeSpan.FromHours(1);
         private readonly double diferenciaHorarioUtcAGdl = -6;
+        private readonly int MaxIntentos = 3;
 
         public NotificacionesFallidasJob(IServiceScopeFactory scopeFactory, ILogger<NotificacionesFallidasJob> logger)
         {
@@ -33,30 +33,39 @@ namespace BackendSpa.Infrastructure.BackgroundServices
         {
             using var scope = _scopeFactory.CreateScope();
             var db = scope.ServiceProvider.GetRequiredService<IAppDbContext>();
-            var mediator = scope.ServiceProvider.GetRequiredService<ISender>();
+            var notificacion = scope.ServiceProvider.GetRequiredService<INotificacion>();
 
             var notificaciones = await db.Notificaciones
-                .Where(n => n.Status == "fallido" &&
-                    n.Cita.Fecha < DateTime.UtcNow.AddDays(diferenciaHorarioUtcAGdl)
-                )
-                .ToListAsync(cancellationToken);
+            .Join(db.Citas,
+                n => n.IdCita,
+                c => c.IdCita,
+                (n, c) => new { Notificacion = n, Cita = c })
+            .Where(x => x.Notificacion.Status == "fallido" &&
+                        x.Notificacion.Intentos < MaxIntentos &&
+                        x.Cita.Fecha > DateTime.UtcNow.AddHours(diferenciaHorarioUtcAGdl))
+            .Select(x => x.Notificacion)
+            .AsTracking()
+            .ToListAsync(cancellationToken);
 
             _logger.LogInformation("Notificaciones fallidas a reintentar: {Count}", notificaciones.Count);
 
             foreach (var notif in notificaciones)
             {
-                var resultado = await mediator.Send(new AddNotificacion(new NotificacionDto() {
-                    IdCita =notif.IdCita,
-                    Destinatario = notif.Destinatario,
-                    Tipo = notif.Tipo.ToString(),
-                    Mensaje = notif.Mensaje,
-                    EnviadoEn = DateTime.UtcNow
-                }), cancellationToken);
+                notif.Intentos++;
 
-                _logger.LogInformation("Reintento notificacion {Id}: {Status}",
+                var resultado = await notificacion.EnviarMensajeAsync(notif.Destinatario, notif.Mensaje);
+
+                notif.Status = resultado.Success ? "enviado" : "fallido";
+                notif.ErrorDetalle = resultado.Mensaje;
+                notif.EnviadoEn = resultado.Success ? DateTime.UtcNow : notif.EnviadoEn;
+
+                _logger.LogInformation("Reintento notificacion {Id}: {Status} {Error}",
                     notif.IdNotificacion,
-                    resultado.Success ? "exitoso" : "fallido");
+                    resultado.Success ? "exitoso" : "fallido",
+                    resultado.Mensaje ?? "");
             }
+
+            await db.SaveChangesAsync(cancellationToken); 
         }
     }
 }
