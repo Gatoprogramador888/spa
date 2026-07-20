@@ -6,16 +6,18 @@ using System.Buffers.Text;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
+using Twilio.Http;
 using static System.Net.WebRequestMethods;
 
 namespace BackendSpa.Infrastructure.Services
 {
-    public class MercadoPagoService(HttpClient httpClient, IConfiguration configuration) : IPlataformaPago
+    public class MercadoPagoService(System.Net.Http.HttpClient httpClient, IConfiguration configuration, ILogger<MercadoPagoService> logger) : IPlataformaPago
     {
-        private readonly HttpClient _http = httpClient;
+        private readonly System.Net.Http.HttpClient _http = httpClient;
         private readonly string _accessToken = configuration["MercadoPago:AccessToken"]!;
         private readonly IConfiguration _config = configuration;
         private const string BaseUrl = "https://api.mercadopago.com";
+        private readonly ILogger<MercadoPagoService> _logger = logger;
 
         public async Task<Responsive<string>> CrearPreferenciaAsync(int idCita, decimal anticipo, string descripcion)
         {
@@ -45,7 +47,7 @@ namespace BackendSpa.Infrastructure.Services
                 var json = JsonSerializer.Serialize(request);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var httpRequest = new HttpRequestMessage(HttpMethod.Post, $"{BaseUrl}/checkout/preferences")
+                var httpRequest = new HttpRequestMessage(System.Net.Http.HttpMethod.Post, $"{BaseUrl}/checkout/preferences")
                 {
                     Content = content
                 };
@@ -73,7 +75,7 @@ namespace BackendSpa.Infrastructure.Services
 
         public async Task<JsonDocument?> ObtenerPagoAsync(string paymentId)
         {
-            var httpRequest = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}/v1/payments/{paymentId}");
+            var httpRequest = new HttpRequestMessage(System.Net.Http.HttpMethod.Get, $"{BaseUrl}/v1/payments/{paymentId}");
             httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _accessToken);
 
             var response = await _http.SendAsync(httpRequest);
@@ -84,5 +86,44 @@ namespace BackendSpa.Infrastructure.Services
 
             return JsonDocument.Parse(responseBody);
         }
+
+        public async Task<bool> ExpirarPreferenciaAsync(string preferenceId)
+        {
+            var body = new
+            {
+                expires = true,
+                expiration_date_to = DateTime.UtcNow.AddSeconds(-1) // ya expirada
+                    .ToString("yyyy-MM-ddTHH:mm:ss.fffzzz")
+            };
+
+            var response = await _http.PatchAsJsonAsync(
+                $"https://api.mercadopago.com/checkout/preferences/{preferenceId}",
+                body
+            );
+
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> ReembolsarPagoAsync(string paymentId)
+        {
+            var httpRequest = new HttpRequestMessage(
+                System.Net.Http.HttpMethod.Post,
+                $"{BaseUrl}/v1/payments/{paymentId}/refunds"
+            );
+            httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _accessToken);
+            httpRequest.Content = new StringContent("{}", Encoding.UTF8, "application/json");
+
+            var response = await _http.SendAsync(httpRequest);
+            var body = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+                _logger.LogWarning("[Reembolso] Falló | PaymentId: {PaymentId} | Status: {Status} | Body: {Body}",
+                    paymentId, response.StatusCode, body);
+            else
+                _logger.LogInformation("[Reembolso] Exitoso | PaymentId: {PaymentId}", paymentId);
+
+            return response.IsSuccessStatusCode;
+        }
+
     }
 }

@@ -1,5 +1,5 @@
 #@BackendSpa_HostAddress = https://localhost:7016
-@BackendSpa_HostAddress = https://f22hsnnt-7016.usw3.devtunnels.ms
+@BackendSpa_HostAddress = https://66jzwvdq-7016.usw3.devtunnels.ms
 #@BackendSpa_HostAddress = http://localhost:5138
 
 ### ✅ Obtener todos los servicios
@@ -40,9 +40,9 @@ Content-Type: application/json
   "nombreCliente": "Edgar",
   "email": "edgar@gmail.com",
   "telefono": "+5213312566287",
-  "fecha": "2026-05-16",
+  "fecha": "2026-07-21",
   "horaInicio": "8:00:00",
-  "idServicios": [1, 2]
+  "idServicios": [1]
 }
 
 ###

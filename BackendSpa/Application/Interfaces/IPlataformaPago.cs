@@ -7,5 +7,9 @@ namespace BackendSpa.Application.Interfaces
     {
         Task<Responsive<string>> CrearPreferenciaAsync(int idCita, decimal anticipo, string descripcion);
         Task<JsonDocument?> ObtenerPagoAsync(string paymentId);
+
+        Task<bool> ExpirarPreferenciaAsync(string preferenceId);
+
+        Task<bool> ReembolsarPagoAsync(string paymentId);
     }
 }
