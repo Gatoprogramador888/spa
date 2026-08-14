@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\backendspa.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:backendspa.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\citas\\querys\\getestadisponiblehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\citas\\querys\\getestadisponiblehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\citas\\querys\\getcrearcita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\citas\\querys\\getcrearcita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\infrastructure\\services\\mercadopagoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:infrastructure\\services\\mercadopagoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\pagos\\dto\\mercadopagodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\pagos\\dto\\mercadopagodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\features\\pagos\\querys\\procesarwebhookhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\features\\pagos\\querys\\procesarwebhookhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\application\\interfaces\\iplataformapago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:application\\interfaces\\iplataformapago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|c:\\users\\gatob\\onedrive\\documentos\\spa\\backendspa\\controllers\\citascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29765D10-0F8E-2057-F11C-1E87A15F9E4E}|BackendSpa.csproj|solutionrelative:controllers\\citascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,80 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProcesarWebhookHandler.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Pagos\\Querys\\ProcesarWebhookHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Pagos\\Querys\\ProcesarWebhookHandler.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Pagos\\Querys\\ProcesarWebhookHandler.cs",
-              "RelativeToolTip": "Application\\Features\\Pagos\\Querys\\ProcesarWebhookHandler.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAWwCsAAAA7AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GetCrearCita.cs",
+              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetCrearCita.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Citas\\Querys\\GetCrearCita.cs",
+              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetCrearCita.cs*",
+              "RelativeToolTip": "Application\\Features\\Citas\\Querys\\GetCrearCita.cs*",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAAI8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-20T17:12:34.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MercadoPagoService.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Infrastructure\\Services\\MercadoPagoService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Services\\MercadoPagoService.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Infrastructure\\Services\\MercadoPagoService.cs",
-              "RelativeToolTip": "Infrastructure\\Services\\MercadoPagoService.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAmwD8AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-20T17:46:41.129Z",
+              "WhenOpened": "2026-08-14T01:17:15.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BackendSpa.http",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\BackendSpa.http",
-              "RelativeDocumentMoniker": "BackendSpa.http",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\BackendSpa.http",
-              "RelativeToolTip": "BackendSpa.http",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAkwCoAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-07-20T17:56:08.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAABfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-20T18:25:10.483Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MercadoPagoDTO.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Pagos\\DTO\\MercadoPagoDTO.cs",
-              "RelativeDocumentMoniker": "Application\\Features\\Pagos\\DTO\\MercadoPagoDTO.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Pagos\\DTO\\MercadoPagoDTO.cs",
-              "RelativeToolTip": "Application\\Features\\Pagos\\DTO\\MercadoPagoDTO.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAADwvzQAAAA2AAAAAAAAAA==",
+              "Title": "GetEstaDisponibleHandler.cs",
+              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetEstaDisponibleHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Features\\Citas\\Querys\\GetEstaDisponibleHandler.cs",
+              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Features\\Citas\\Querys\\GetEstaDisponibleHandler.cs*",
+              "RelativeToolTip": "Application\\Features\\Citas\\Querys\\GetEstaDisponibleHandler.cs*",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-20T18:42:28.77Z",
+              "WhenOpened": "2026-08-14T01:12:03.151Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IPlataformaPago.cs",
-              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Interfaces\\IPlataformaPago.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IPlataformaPago.cs",
-              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Application\\Interfaces\\IPlataformaPago.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IPlataformaPago.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "CitasController.cs",
+              "DocumentMoniker": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Controllers\\CitasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CitasController.cs",
+              "ToolTip": "C:\\Users\\gatob\\OneDrive\\Documentos\\spa\\BackendSpa\\Controllers\\CitasController.cs",
+              "RelativeToolTip": "Controllers\\CitasController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAkwCcAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-20T17:46:06.911Z",
+              "WhenOpened": "2026-08-14T01:11:43.315Z",
               "EditorCaption": ""
             }
           ]

@@ -11,6 +11,7 @@ using BackendSpa.Application.Interfaces;
 using BackendSpa.Domain;
 using BackendSpa.Domain.Interface;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackendSpa.Application.Features.Citas.Querys
 {
@@ -31,118 +32,116 @@ namespace BackendSpa.Application.Features.Citas.Querys
 
         public async Task<Responsive<CitaDto>> Handle(GetCreateCita request, CancellationToken cancellationToken)
         {
-            var cita = request.cita;
-            int tiempo = 0;
-            List<ServicioDto> servicios = new();
+            var citaReq = request.cita;
 
-            //revisar servicios pedidos
-            foreach(int id_servicio in cita.IdServicios)
+            // 1. Obtener servicios y calcular tiempos (Lógica rápida en memoria)
+            var servicios = await _db.Servicios
+                .Where(s => citaReq.IdServicios.Contains(s.IdServicio))
+                .ToListAsync(cancellationToken);
+
+            if (servicios.Count != citaReq.IdServicios.Count)
+                return new Responsive<CitaDto>(false, "Uno o más servicios especificados no existen.", null);
+
+            int duracionTotalMinutos = servicios.Sum(s => s.DuracionMin ?? horasDepilacion);
+            TimeSpan horaFin = citaReq.HoraInicio.Add(TimeSpan.FromMinutes(duracionTotalMinutos));
+            decimal precioTotal = servicios.Sum(s => s.Precio);
+            decimal anticipo = _anticipo.Calcular(precioTotal);
+
+            // 2. INICIAR TRANSACCIÓN (100% C#)
+            using var transaction = await _db.Database.BeginTransactionAsync(cancellationToken);
+
+            try
             {
-                var servicio = await _mediator.Send(new GetServicioByIdQuery(id_servicio), cancellationToken) ?? 
-                    throw new ArgumentException($"el servicio con el id {id_servicio} no existe");
+                // A) Bloquear las citas de la fecha especificada en MySQL durante esta petición
+                bool estaOcupado = await _db.Citas
+                    .FromSqlRaw("SELECT * FROM citas WHERE fecha = {0} FOR UPDATE", citaReq.Fecha)
+                    .AnyAsync(c =>
+                        c.Fecha == citaReq.Fecha &&
+                        c.HoraInicio < horaFin &&
+                        c.HoraFin > citaReq.HoraInicio &&
+                        c.Estado != EstadoCita.Cancelada, cancellationToken);
 
-                servicios.Add(servicio);
-                tiempo += (int)(servicio.DuracionMin is not null ? servicio.DuracionMin : horasDepilacion);
-            }
+                if (estaOcupado)
+                {
+                    await transaction.RollbackAsync(cancellationToken);
+                    return new Responsive<CitaDto>(false, "El horario seleccionado ya no se encuentra disponible.", null);
+                }
 
-            TimeSpan horaFinal = cita.HoraInicio.Add(TimeSpan.FromMinutes(tiempo));
+                // B) Obtener o Crear Cliente
+                var cliente = await _db.Clientes
+                    .FirstOrDefaultAsync(c => c.Nombre == citaReq.NombreCliente, cancellationToken);
 
-            DisponibilidadDTO disponibilidadDTO = new(cita.Fecha, cita.HoraInicio, horaFinal);
+                if (cliente is null)
+                {
+                    cliente = new Cliente
+                    {
+                        Nombre = citaReq.NombreCliente,
+                        Email = citaReq.Email,
+                        Telefono = citaReq.Telefono
+                    };
+                    _db.Clientes.Add(cliente);
+                    await _db.SaveChangesAsync(cancellationToken);
+                }
 
-            //Ver si esta disponible
-            var responsiveDisponibilidad = await _mediator.Send(new GetEstaDisponibleQuery(disponibilidadDTO), cancellationToken);
+                // C) Crear Cita
+                var nuevaCita = new Cita
+                {
+                    IdCliente = cliente.IdCliente,
+                    Fecha = citaReq.Fecha,
+                    HoraInicio = citaReq.HoraInicio,
+                    HoraFin = horaFin,
+                    Estado = EstadoCita.Pendiente,
+                    PrecioTotal = precioTotal,
+                    Anticipo = anticipo,
+                    CreadoEn = DateTime.UtcNow
+                };
 
-            if (!responsiveDisponibilidad.Success || !responsiveDisponibilidad.Data) return new Responsive<CitaDto>(
-                false,
-                responsiveDisponibilidad.Mensaje,
-                null
-                );
-
-            //Crear precio
-            decimal precio = 0;
-
-            foreach(var servicio in servicios)
-            {
-                precio += servicio.Precio;
-            }
-
-            decimal anticipo = _anticipo.Calcular(precio);
-
-            //Request cliente para saber si existe o no
-            var EntidadCliente = await _mediator.Send(new GetClienteByName(cita.NombreCliente), cancellationToken);
-
-            int id_cliente = 0;
-            var citaDto = request.cita;
-            
-            if(EntidadCliente.Data is null)
-            {
-                var cliente = await _mediator.Send(new GetCreateCliente(new ClienteDto(0,
-                    citaDto.NombreCliente,
-                    citaDto.Email,
-                    citaDto.Telefono)), cancellationToken);
-
-
-
-                id_cliente = cliente.Data?.IdCliente
-                ?? throw new ArgumentException(cliente.Mensaje);
-            }
-            else
-            {
-                id_cliente = EntidadCliente.Data.IdCliente;
-            }
-
-            Cita entidad = new()
-            {
-                IdCliente = id_cliente,          
-                Fecha = request.cita.Fecha,
-                HoraInicio = request.cita.HoraInicio,
-                HoraFin = horaFinal,
-                Estado = EstadoCita.Pendiente,
-                PrecioTotal = precio,        
-                Anticipo = anticipo,           
-                CreadoEn = DateTime.UtcNow
-            };
-
-            await _db.Citas.AddAsync(entidad, cancellationToken);
-
-            await _db.SaveChangesAsync(cancellationToken);
-
-            //Respuesta
-            CitaDto dto = new(
-                entidad.IdCita,
-                id_cliente,
-                cita.NombreCliente,
-                cita.Fecha,
-                cita.HoraInicio,
-                horaFinal,
-                "pendiente",
-                precio,
-                anticipo
-                );
-
-            //Request de crear Cita Servicio
-            List<CitaServicioDto> citaServicioDtos = new();
-            foreach (var servicio in servicios)
-            {
-                CitaServicioDto citaServicioDto = new(0, entidad.IdCita, servicio.IdServicio, servicio.Precio);
-                citaServicioDtos.Add(citaServicioDto);
-            }
-
-            await _mediator.Send(new GetCitaServicioCreate(citaServicioDtos), cancellationToken);
-
-            var pago = await _mediator.Send(
-            new CrearPreferenciaCommand(entidad.IdCita, anticipo),
-                cancellationToken
-            );
-
-            if (!pago.Success)
-            {
-                entidad.Estado = EstadoCita.Cancelada;
+                _db.Citas.Add(nuevaCita);
                 await _db.SaveChangesAsync(cancellationToken);
-                return new Responsive<CitaDto>(false, pago.Mensaje, null);
-            }
 
-            return new Responsive<CitaDto>(true, pago.Data!, dto);
+                // D) Crear CitaServicios
+                var citaServicios = servicios.Select(s => new CitaServicio
+                {
+                    IdCita = nuevaCita.IdCita,
+                    IdServicio = s.IdServicio,
+                    PrecioUnitario = s.Precio
+                }).ToList();
+
+                _db.CitaServicios.AddRange(citaServicios);
+                await _db.SaveChangesAsync(cancellationToken);
+
+                // E) Pasarela de Pago
+                var pago = await _mediator.Send(new CrearPreferenciaCommand(nuevaCita.IdCita, anticipo), cancellationToken);
+
+                if (!pago.Success)
+                {
+                    // Si el pago falla, deshalcemos TODO en la base de datos de golpe
+                    await transaction.RollbackAsync(cancellationToken);
+                    return new Responsive<CitaDto>(false, pago.Mensaje, null);
+                }
+
+                // F) Confirmar Transacción
+                await transaction.CommitAsync(cancellationToken);
+
+                var dto = new CitaDto(
+                    nuevaCita.IdCita,
+                    cliente.IdCliente,
+                    cliente.Nombre,
+                    nuevaCita.Fecha,
+                    nuevaCita.HoraInicio,
+                    nuevaCita.HoraFin,
+                    "Pendiente",
+                    precioTotal,
+                    anticipo
+                );
+
+                return new Responsive<CitaDto>(true, pago.Data!, dto);
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync(cancellationToken);
+                return new Responsive<CitaDto>(false, $"Error al procesar la cita: {ex.Message}", null);
+            }
         }
     }
 }

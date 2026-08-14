@@ -42,29 +42,15 @@ namespace BackendSpa.Application.Features.Citas.Querys
                 return new Responsive<bool>(false, "La hora pedida ya transcurrio elija nueva fecha", false);
             }
 
-            var cita = await _db.Citas.Where(
-                c =>
-                //Validar el dia
-                c.Fecha == request.cita.Fecha && 
-                c.HoraInicio < request.cita.HoraFin &&
-                c.HoraFin > request.cita.HoraInicio &&
-                c.Estado != Domain.EstadoCita.Cancelada).
-            Include( c => c.Cliente).Select
-            (c => new CitaDto(
-            c.IdCita,                                     
-            c.IdCliente,                                  
-            c.Cliente.Nombre,                              
-            c.Fecha,                                      
-            c.HoraInicio,                                 
-            c.HoraFin,                                     
-            c.Estado.ToString(),                          
-            c.PrecioTotal,                                
-            c.Anticipo                                    
-            )).FirstOrDefaultAsync(cancellationToken);
+            bool estaOcupado = await _db.Citas.AnyAsync(c =>
+            c.Fecha == request.cita.Fecha &&
+            c.HoraInicio < request.cita.HoraFin &&
+            c.HoraFin > request.cita.HoraInicio &&
+            c.Estado != Domain.EstadoCita.Cancelada,
+            cancellationToken);
 
-            //Si es nulo si esta disponible
-            bool respuesta = cita is null;
-            return new Responsive<bool>(true, respuesta ? "hora disponible" : "hora no disponible" , respuesta);
+            bool estaDisponible = !estaOcupado;
+            return new Responsive<bool>(true, estaDisponible ? "hora disponible" : "hora no disponible" , estaDisponible);
         }
     }
 }
